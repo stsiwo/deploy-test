@@ -4,16 +4,16 @@ executors:
   my-executor:
     docker:
       - image: stsiwo/circleci-base:1.0 
-        # working_directory: /tmp
+    working_directory: /app
 
 jobs:
   build:
     executor: my-executor
     steps:
       - run:
-          name: Build 
+          name: Create GCloud Service Key File 
           command: |
-            echo $GCLOUD_SERVICE_KEY
-            gcloud auth activate-service-account --key-file $GCLOUD_SERVICE_KEY
+            echo $GCLOUD_SERVICE_KEY > gcp-service-key.json
+            gcloud auth activate-service-account --key-file ./gcp-service-key.json 
             echo 'Build'
 
