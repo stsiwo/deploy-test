@@ -13,5 +13,7 @@ jobs:
       - run:
           name: Build 
           command: |
+            echo $GCLOUD_SERVICE_KEY
+            gcloud --help
             echo 'Build'
 
