@@ -3,7 +3,7 @@ version: 2.1
 executors:
   my-executor:
     docker:
-      - image: stsiwo/circleci-base:1.02 
+      - image: stsiwo/circleci-base:1.03 
     working_directory: /app
 
 jobs:
