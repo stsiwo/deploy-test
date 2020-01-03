@@ -15,5 +15,7 @@ jobs:
           command: |
             echo $GCLOUD_SERVICE_KEY > gcp-service-key.json
             gcloud auth activate-service-account --key-file ./gcp-service-key.json 
-            echo 'Build'
+            rm -f ./gcp-service-key.json
+            echo "test" > test.txt
+            gcloud compute scp ./test.txt my-first-gce:~
 
