@@ -17,6 +17,5 @@ jobs:
             gcloud --quiet config set project ${GOOGLE_PROJECT_ID}
             gcloud --quiet config set compute/zone ${GOOGLE_COMPUTE_ZONE}
             echo "test!!!!!" > test.txt
-            head ./test.txt
             gcloud compute scp --quiet ./test.txt circleci-container@$GOOGLE_COMPUTE_NAME:~ --zone $GOOGLE_COMPUTE_ZONE 
 
