@@ -17,5 +17,6 @@ jobs:
             gcloud auth activate-service-account --key-file ./gcp-service-key.json 
             rm -f ./gcp-service-key.json
             echo "test" > test.txt
-            gcloud compute scp --quiet ./test.txt my-first-gce:~ --zone us-west1-a
+            gcloud config set project $GOOGLE_PROJECT_ID 
+            gcloud compute scp --quiet ./test.txt $GOOGLE_COMPUTE_NAME:~ --zone $GOOGLE_COMPUTE_ZONE 
 
