@@ -3,7 +3,7 @@ version: 2.1
 executors:
   my-executor:
     docker:
-      - image: stsiwo/circleci-base:1.03 
+      - image: stsiwo/circleci-base:1.04 
     working_directory: /app
 
 jobs:
@@ -17,5 +17,5 @@ jobs:
             gcloud auth activate-service-account --key-file ./gcp-service-key.json 
             rm -f ./gcp-service-key.json
             echo "test" > test.txt
-            gcloud compute scp ./test.txt my-first-gce:~
+            gcloud compute scp --quiet ./test.txt my-first-gce:~
 
