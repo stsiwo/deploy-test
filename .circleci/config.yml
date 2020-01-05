@@ -19,5 +19,4 @@ jobs:
             echo "test!!!!!!!!!!!!!!!!" > test.txt
             gcloud info
             gcloud compute scp --quiet ./test.txt circleci-container@$GOOGLE_COMPUTE_NAME:~ --zone $GOOGLE_COMPUTE_ZONE 
-            gcloud compute ssh --quiet circleci-container@$GOOGLE_COMPUTE_NAME:~ --zone $GOOGLE_COMPUTE_ZONE
 
