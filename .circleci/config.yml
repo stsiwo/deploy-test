@@ -20,5 +20,5 @@ jobs:
             echo "test!!!!!!!!!!!!!!!! modified!!!!!!!!1!!!!" > test.txt
             gcloud info
             # gcloud compute scp --quiet ./test.txt circleci-container@$GOOGLE_COMPUTE_NAME:~ --zone $GOOGLE_COMPUTE_ZONE 
-            gcloud compute scp --quiet ./test.txt my-8th-startup-test:/home/app --zone us-central1-a
+            gcloud compute scp --quiet ./test.txt my-9th-startup-test:/home/app --zone us-central1-a
 
